@@ -20,3 +20,9 @@ git pull
 
 
 
+
+
+# path for installing custom/local package
+pip install .
+-e .
+setup.py(python setup.py install)
