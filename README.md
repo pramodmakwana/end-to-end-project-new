@@ -17,3 +17,6 @@ git commit -m "this is my first commit
 
 # This command is for pulling the changes from the github repository
 git pull    
+
+
+
