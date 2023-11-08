@@ -1,4 +1,8 @@
 pandas
-numpy 
-scikit - learn
+scikit-learn
+numpy
+seaborn
 ipykernel
+Flask
+
+#-e .
