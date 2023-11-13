@@ -21,6 +21,8 @@ from src.DimondPricePrediction.utils.utils import save_object
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path=os.path.join('artifacts','preprocessor.pkl')
+    
+    
 
 class DataTransfromation:
     def __init__(self):
@@ -29,7 +31,7 @@ class DataTransfromation:
     def get_data_transformation(self):
         
         try:
-            logging.info("Exception occured in the initiate_datatransformation")t
+            logging.info("Data Transformation initaited ")
             # Define which columns should be ordinalencoded and which should be sclaed
             
             categorical_cols=['cut','color','clarity']
@@ -67,13 +69,18 @@ class DataTransfromation:
                 ('cat_pipeline',cat_pipeline,categorical_cols)
             ])
             
-            return preprocessing
+            return preprocesser
             
             
         
             raise customexception(e,sys)
             except Exception as e:
-            logging.info("Exception occured in the initiate_datatransformation ")
+            logging.info("Exception occured in the initiate_datatransformation "
+                       
+                  raise customexception(e,sys)
+                         
+            
+            
             
     def initialize_data_transformation(self,train_path,test_path):
         try:
@@ -98,11 +105,21 @@ class DataTransfromation:
             
             logging.info("Applying preprocessing object on training and testing datasets")
             
+            train_arr=np.c_[input_feature_train_arr,np.array(target_feature_train_df)]
+            test_arr=np.c_[input_feature_test_arr,np.array(target-feature_test_df)
+            
             save_object(
                file_path= self.data_transformation_config.preprocessor_obj_file_path,
                obj=preprocessing_obj
             )
             
+            logging.info("preprocesing pickle file saved")
+            
+            return (
+                
+                train_arr
+                test_arr
+            )
     
         except Exception as e:
             logging.info("Exception occured in the initiate_datatransformation")
